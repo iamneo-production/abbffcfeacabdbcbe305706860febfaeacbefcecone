@@ -1,5 +1,4 @@
 package com.example.springapp.model;
-
 public class Medicine {
     private int medicineId;
     private String medicineName;
@@ -56,5 +55,5 @@ public class Medicine {
 
     public void setDescription(String description) {
         this.description = description;
-    }
+    }  
 }

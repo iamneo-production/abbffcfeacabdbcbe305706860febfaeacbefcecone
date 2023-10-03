@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class MedicineContoller {
+public class MedicineController {
     private List<Medicine> medicineList = new ArrayList<>();
 
     // POST endpoint to add a new medicine
