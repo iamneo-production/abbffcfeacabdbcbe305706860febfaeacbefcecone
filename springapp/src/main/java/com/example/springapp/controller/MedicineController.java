@@ -7,20 +7,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class MedicineContoller {
+@RequestMapping("/medicines") // Set the root path for this controller
+public class MedicineController {
     private List<Medicine> medicineList = new ArrayList<>();
 
     // POST endpoint to add a new medicine
-    @PostMapping("/")
+    @PostMapping
     public boolean addMedicine(@RequestBody Medicine medicine) {
         return medicineList.add(medicine);
     }
 
     // PUT endpoint to update a medicine by medicineId
-    @PutMapping("/{id}") // Change the path variable to "id"
+    @PutMapping("/{id}")
     public Medicine updateMedicine(@PathVariable int id, @RequestBody Medicine updatedMedicine) {
         for (Medicine medicine : medicineList) {
-            if (medicine.getMedicineId() == id) { // Update the parameter name to "id"
+            if (medicine.getMedicineId() == id) {
                 medicine.setMedicineName(updatedMedicine.getMedicineName());
                 medicine.setPrice(updatedMedicine.getPrice());
                 medicine.setQuantity(updatedMedicine.getQuantity());
